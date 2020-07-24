@@ -21,7 +21,7 @@ const switchNavigator = createSwitchNavigator({
         }),
         TrackCreate: TrackCreateScreen,
         Account: AccountScreen,
-    })
+    }),
 })
 
 export default createAppContainer(switchNavigator)
