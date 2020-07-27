@@ -3,6 +3,8 @@ import createDataContext from "./createDataContext"
 
 const authReducer = (state, action) => {
     switch (action.type) {
+        case `add_error`:
+            return { ...state, errorMessage: action.payload }
         case `signup`:
             return state
         default:
@@ -16,7 +18,10 @@ const signup = (dispatch) => {
             const response = await trackerApi.post(`/signup`, { email, password })
             console.log(response.data)
         } catch (err) {
-            console.log(err.response.data)
+            dispatch({
+                payload: `Something went wrong with sign up :(`,
+                type: `add_error`,
+            })
         }
         // make api request to sign up with email/password
 
@@ -45,5 +50,5 @@ const signout = (dispatch) => {
 export const { Context, Provider } = createDataContext(
     authReducer,
     { signin, signout, signup, },
-    { isSignedTrue: false }
+    { isSigned: false, errorMessage: `` }
 )
