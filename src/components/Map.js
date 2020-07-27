@@ -1,15 +1,25 @@
 import React from "react"
-import { StyleSheet, View } from "react-native"
-import { Text } from "react-native-elements"
+import { StyleSheet } from "react-native"
+import MapView from "react-native-maps"
 
 const Map = () => {
     return (
-        <View>
-            <Text>I am a map</Text>
-        </View>
+        <MapView
+            initialRegion={{
+                latitude: 37.33233,
+                latitudeDelta: 0.01,
+                longitude: -122.03121,
+                longitudeDelta: 0.01,
+            }}
+            style={styles.map}
+        />
     )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    map: {
+        height: 300,
+    },
+})
 
 export default Map
