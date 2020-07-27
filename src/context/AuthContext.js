@@ -32,13 +32,14 @@ const signup = (dispatch) => async ({ email, password }) => {
     }
 }
 
-const signin = (dispatch) => {
-    return async ({ email, password }) => {
-        const response = await trackerApi.post(`/signin`)
-        // try to signin
+const signin = (dispatch) => async ({ email, password }) => {
+       try {
+           const response = await trackerApi.post(`/signin`)
+        } catch (err) {
+           console.log(err.message)
+       }
         // handle success by updating state
         // handle failure with error message somehow
-    }
 }
 
 const signout = (dispatch) => {
