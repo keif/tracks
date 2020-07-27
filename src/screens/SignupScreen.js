@@ -1,6 +1,6 @@
-import React, { useContext, useState } from "react"
+import React, { useContext } from "react"
 import { StyleSheet, TouchableOpacity, View } from "react-native"
-import { Button, Input, Text } from "react-native-elements"
+import { Text } from "react-native-elements"
 import AuthForm from "../components/AuthForm"
 import Spacer from "../components/Spacer"
 import { Context as AuthContext } from "../context/AuthContext"
@@ -41,15 +41,9 @@ const styles = StyleSheet.create({
         flex: 1,
         marginBottom: 250,
     },
-    errorMessage: {
-        color: `#f00`,
-        fontSize: 16,
-        marginTop: 15,
-        marginLeft: 15,
-    },
     link: {
         color: `blue`,
-    }
+    },
 })
 
 export default SignupScreen
