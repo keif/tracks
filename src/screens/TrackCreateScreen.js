@@ -4,6 +4,7 @@ import { Text } from "react-native-elements"
 import { SafeAreaView, withNavigationFocus } from "react-navigation"
 import "../_mockLocations"
 import Map from "../components/Map"
+import TrackForm from "../components/TrackForm"
 import { Context as LocationContext } from "../context/LocationContext"
 import useLocation from "../hooks/useLocation"
 
@@ -16,6 +17,7 @@ const TrackCreateScreen = ({ isFocused }) => {
             <Text h3>Create a Track</Text>
             <Map/>
             {err ? <Text>Please enable location services</Text> : null}
+            <TrackForm />
         </SafeAreaView>
     )
 }
