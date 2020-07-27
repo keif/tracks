@@ -10,7 +10,7 @@ export default (callback) => {
                 throw new Error("Location permission not granted")
             }
 
-            await watchPositionAsync(
+            const subscriber = await watchPositionAsync(
                 {
                     accuracy: Accuracy.BestForNavigation,
                     distanceInterval: 10,
